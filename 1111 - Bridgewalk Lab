@@ -1,0 +1,78 @@
+/** Heading  **********************************************/
+/*	Your name: Nayrie Patel
+		Class block: A Block			Date Started: 9/30/20
+		Lab Number: 1111
+		Title: Bridgewalk
+		Purpose: In this problem a person is placed at the center of a 7-meter long bridge.  Each step, the person moves 1 meter either forward or backward at random. 
+*/
+
+import java.util.Random;
+class Main {
+  public static void main(String[] args) {
+    bridge();
+    table();
+  }
+
+//moving mechanisms
+  public static void bridge()
+  {
+    int position = 0;
+    int steps = 0;
+    while (position < 4 && position > -4) 
+    {
+      displayStep(position, steps);
+      Random randomGenerator = new Random();
+      if (randomGenerator.nextInt(2) == 0)
+        position += -1;
+      else
+        position += 1;
+      steps += 1;
+    }
+    displayStep(position, steps);
+  }
+
+//prints bridge components
+  public static void displayStep(int position, int steps)
+  {
+    System.out.println("Step " + steps);
+    for (int x = -4; x <= 4; x++)
+		{
+			if (x == position)
+				System.out.print("*");
+			else if (x == -4 || x == 4)
+				System.out.print("|");
+			else
+				System.out.print("-");
+		}
+		System.out.println("");
+  }
+
+//prints length + average table
+  public static void table()
+  {
+    System.out.println("length    average     max");
+    for(int length = 5; length <= 21; length += 2)
+		{
+			int max = 0;
+			double total = 0.0;
+			for( int x = 0; x < 50; x++)
+			{
+				int steps = 0;
+				int position = 0;
+				while ((position < ((length + 1 )/2)) && (position > -1 * ((length + 1 )/2)))
+				{
+          Random randomGenerator = new Random();
+					if (randomGenerator.nextInt(2) == 0)
+						position += -1;
+					else
+						position += 1;
+					steps += 1;
+				}
+				total += steps;
+				if (steps > max)
+					max = steps;
+			}
+		System.out.println("  " + length + "         " + total/50 + "       " + max);
+    }
+  }
+} 
