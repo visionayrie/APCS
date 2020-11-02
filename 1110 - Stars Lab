@@ -1,0 +1,87 @@
+
+/** Heading  *****************************************************/
+/*
+  Your name: Nayrie Patel
+	Class block: A Block	Date Started: 10/13
+	Lab Number: 1110
+	Title: Stars
+	Purpose: Write a complete program that will generate the following four patterns of asterisks
+*/
+
+import java.util.Scanner;
+
+class Main {
+
+  private static Scanner rows;
+
+  public Main()
+  {
+    rows = new Scanner(System.in);
+    System.out.println("How many rows do you want?");
+    int input;
+    pattern1();
+    pattern2();
+    pattern3();
+    pattern4();
+  }
+
+  public void pattern1() 
+  {
+    int row, col, input;
+    input = rows.nextInt();
+    System.out.print("\n");
+    for(row = 0; row < input; row++)
+    {
+      for(col = (input - 1) - row; col >= 0; col--)
+        System.out.print("*");
+      System.out.print("\n");
+    }
+  }
+
+  public void pattern2()
+  {
+    int row, col, space, input;
+    input = rows.nextInt();
+    System.out.print("\n");
+    for(row = 0; row < (input); row++)
+    {
+      for(space = 0; space <= (input-2) - row; space++) {
+        System.out.print(" ");
+       }
+      for(col = row; col >= 0; col--)
+      System.out.print("*");
+      System.out.print("\n");
+    }
+  }
+
+  public void pattern3()
+  {
+    int row, col, space, input;
+    input = rows.nextInt();
+    System.out.print("\n");
+    for(row = 0; row < (input); row++)
+    {
+      for(space = 0; space <= (input-2) - row; space++) {
+        System.out.print(" ");
+       }
+      for(col = 2*row ; col >= 0; col--)System.out.print("*");
+      System.out.print("\n");
+    }
+  }
+
+  public void pattern4()
+  {
+    int row, col, input;
+    input = rows.nextInt();
+    System.out.print("\n");
+    for(row = 1; row <= input; row++)
+    {
+      for(col = 1; col <= input; col++)
+      if (row == 1 || row == input || col == 1 || col == input || row == col || row == (input+1)-col)
+        System.out.print("*");
+      else
+        System.out.print(" ");
+     System.out.print("\n");
+    }
+  }  
+}
