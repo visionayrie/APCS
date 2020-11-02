@@ -1,0 +1,18 @@
+/** Heading  *****************************************************/
+/*
+  Your name: Nayrie Patel
+	Class block: A Block		Date Started: 10/19/20
+	Lab Number: 0
+	Title: Simple Algorithms
+	Purpose: Explore various algorithms for solving problems using the primitive data types in Java
+*/
+
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class Main {
+	public static void main (String args[]) {
+		SimpleAlgorithms sa = new SimpleAlgorithms();
+		sa.fileDataRead();
+	}
+}
